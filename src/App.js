@@ -11,7 +11,7 @@ class App extends Component {
                 <div className={styles.logoContainer}>
                     <img
                         className={styles.logo}
-                        src="https://cdn2.downdetector.com/static/uploads/logo/Spotify_Logo_RGB_Green.png"
+                        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
                         alt=""
                     />
                 </div>

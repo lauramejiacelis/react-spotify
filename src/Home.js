@@ -51,8 +51,8 @@ class Home extends Component {
           {this.state.artist.map((artistInfo) => {
             return (
               <Link to={`/Artist/:${artistInfo.id}`} className={styles.artistResults}>
-                <img className={styles.logo} src={artistInfo.image} alt="" />
-                {artistInfo.name}
+                <img className={styles.artistImage} src={artistInfo.image} alt="" />
+                <h4>{artistInfo.name}</h4>
               </Link>
             );
           })}
