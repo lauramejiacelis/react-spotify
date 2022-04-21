@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 
 class Home extends Component {
   state = {
-    input: "",
-    artist: []
+    input: '',
+    artist: [],
   };
 
   handleChange = ({ target: { value } }) => {
     this.setState({
-      input: value
+      input: value,
     });
   };
 
@@ -22,7 +22,7 @@ class Home extends Component {
     fetchArtists(this.state.input).then((artist) => {
       console.log(`handleSearch infetch ${this.state.input}`);
       this.setState({
-        artist
+        artist,
         //artistImages: artist.images
       });
     });
@@ -31,27 +31,31 @@ class Home extends Component {
   render() {
     return (
       <div className={styles.mainContainer}>
-        
         <div className={styles.inputContainer}>
           <InputGroup>
-            <InputGroupText>
-              Artist
-            </InputGroupText>
-            <Input 
+            <InputGroupText>Artist</InputGroupText>
+            <Input
               type="text"
               id="getArtist"
               value={this.state.input}
-              onChange={this.handleChange} 
+              onChange={this.handleChange}
             />
             <Button onClick={this.handleSearch}>Search</Button>
           </InputGroup>
         </div>
-        
+
         <div className={styles.artistContainer}>
           {this.state.artist.map((artistInfo) => {
             return (
-              <Link to={`/Artist/:${artistInfo.id}`} className={styles.artistResults}>
-                <img className={styles.artistImage} src={artistInfo.image} alt="" />
+              <Link
+                to={`/Artist/${artistInfo.id}`}
+                className={styles.artistResults}
+              >
+                <img
+                  className={styles.artistImage}
+                  src={artistInfo.image}
+                  alt=""
+                />
                 <h4>{artistInfo.name}</h4>
               </Link>
             );
